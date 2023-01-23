@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reduce</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        const numbers = [3, 3, 1];
+
+        let initialValue = 0
+        const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue,
+            initialValue
+        );
+
+        console.log(sum);
+
+
+        const array1 = [3, 3, 3];
+        const sumWithInitial = array1.reduce(
+            (previous, current) => previous + current,
+            0
+        );
+
+        console.log(sumWithInitial);
+
+
+        let array2 = [2, 2, 2];
+
+        function SumNumbers() {
+
+            const arraySum = array2.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+            console.log(arraySum);
+        };
+
+        SumNumbers();
+    </script>
+
+</body>
+
+</html>
