@@ -39,7 +39,6 @@
             width: 30%;
             margin: 1rem 0;
         }
-        
     </style>
 </head>
 
@@ -54,10 +53,22 @@
 
     <script>
 
-        let input = document.getElementById('input-data').value;
+        let input = document.getElementById('input-data');
         let data = document.getElementById('data');
 
         let items = [];
+
+        input.addEventListener('input', () => {
+
+            data.innerHTML = " "
+
+            items.filter((item) =>
+                item.toLowerCase().includes(input.value.toLowerCase())
+            )
+                .forEach((item) => addHTML(item))
+
+        })
+
 
         function addHTML(item) {
             const div = document.createElement('div')
