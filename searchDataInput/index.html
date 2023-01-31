@@ -6,13 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SearchDataInput</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+            font-size: 1rem;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            margin: 5rem 0;
+            flex-direction: column;
+            text-align: left;
+            width: 100%;
+        }
+
+        .input {
+            border: 1px solid rgba(128, 128, 128, 0.548);
+            outline: 0;
+            width: 30%;
+            min-height: 5vh;
+            padding-left: 0.45rem;
+            border-radius: 3px;
+        }
+
+        .data {
+            text-align: left;
+            width: 30%;
+            margin: 1rem 0;
+        }
+        
+    </style>
 </head>
 
 <body>
 
     <div class="content">
-        <input type="text" placeholder="Insert value" id="input-data">
-        <input type="submit" value="send" id="submit">
+        <input type="text" placeholder="Insert value" id="input-data" class="input">
         <div class="data" id="data">
 
         </div>
@@ -20,28 +54,27 @@
 
     <script>
 
-        let dataArray = [
-            {
-                name: 'Rafael'
-            },
-            {
-                name: 'vitor'
-            }
-        ]
+        let input = document.getElementById('input-data').value;
+        let data = document.getElementById('data');
 
+        let items = [];
 
-        let submit = document.getElementById('submit');
-        let dataMap = document.getElementById('data')
+        function addHTML(item) {
+            const div = document.createElement('div')
+            div.innerHTML = item
 
+            data.append(div)
 
-        dataMap.innerHTML = dataArray.map((item) => item.name).join(' - ')
+        }
 
-
-        submit.addEventListener('click', () => {
-            let search = document.getElementById('input-data').value;
-
-        });
-
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then((users) => {
+                users.forEach(user => {
+                    addHTML(user.name)
+                    items.push(user.name)
+                });
+            })
 
 
 
