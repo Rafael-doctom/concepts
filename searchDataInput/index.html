@@ -58,17 +58,21 @@
 
         let items = [];
 
+        // input.addEventListener('input', () => {
+
+        //     data.innerHTML = " "
+
+        //     items.filter((item) =>
+        //         item.toLowerCase().includes(input.value.toLowerCase())
+        //     )
+        //         .forEach((item) => addHTML(item))
+
+        // })
+
+
         input.addEventListener('input', () => {
-
-            data.innerHTML = " "
-
-            items.filter((item) =>
-                item.toLowerCase().includes(input.value.toLowerCase())
-            )
-                .forEach((item) => addHTML(item))
-
+            data.innerHTML = ''
         })
-
 
         function addHTML(item) {
             const div = document.createElement('div')
