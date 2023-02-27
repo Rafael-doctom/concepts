@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    margin: 5rem auto;
+    align-items: center;
+}
+
+.content {
+    width: 700px;
+    height: 400px;
+}
+
+img {
+    width: 600px;
+    height: 350px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.none {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+
+.ph-arrow-circle-left, .ph-arrow-circle-right{
+    font-size: 5em;
+
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>carousel</title>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="previous" id="previous"><i class="ph-arrow-circle-left"></i></div>
+
+        <div class="content">
+            <img data-js="images" src="images/1.webp" class="block none images 1" id="block" alt="1">
+            <img data-js="images" src="images/2.webp" class="none images 2" alt="2">
+            <img data-js="images" src="images/3.jpg" class="none images 3" alt="3">
+            <img data-js="images" src="images/4.jpg" class="none images 4" alt="4">
+        </div>
+        <div class="next" id="next"><i class="ph-arrow-circle-right"></i></div>
+
+    </div>
+
+    <script>
+
+        let next = document.getElementById('next')
+        let previous = document.getElementById('previous')
+        let images = document.querySelectorAll('[data-js="images"]')
+
+        let init = 0
+
+        next.addEventListener('click', () => {
+            init++
+
+            images.forEach(removeBlock => {
+                removeBlock.classList.remove('block')
+            })
+
+            images[init].classList.add('block')
+
+            if (images[init] == images[3]) {
+                init = 0
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>
