@@ -1,7 +1,7 @@
 ## Exercise list in JavaScript, where I strongly seek to improve my knowledge in logic, data structure.
 
 | # | Project | Project |                                                                    |
-| --- | ---------- | ------------------- | ---------------------------------------------------------------------------- |
+| --- | ---------- | ------------------- | ---------------------------------------------------------------------------- 
 | 01  |  searchDataInput | [Link](searchDataInput/index.html) |
 | 02  |  replace | [Link](replace/index.html) |
 | 03  |  reduce | [Link](reduce/index.html) |
