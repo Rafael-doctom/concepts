@@ -17,3 +17,4 @@
 | 06  |  at | [Link](at/index.js) 
 | 07  |  api | [Link](api/index.html) 
 | 08  |  create element using paragraph & return to DOM with appendChild| [Link](createElement/appendChild.html) 
+| 09  |  array  letters my name & return using join on DOM | [Link](createElement/appendChild.html) 
