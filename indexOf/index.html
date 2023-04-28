@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>indexOf</title>
+</head>
+
+<body>
+
+    <p id="myName">
+        <!-- My name is... -->
+    </p>
+
+    <script>
+
+        let myNameIs = document.getElementById('myName');
+        let array = ['r', 'a', 'f', 'a', 'e', 'l'];
+        let return_name = array.indexOf('r', 0);
+
+        if (return_name == 0) {
+
+            let joinArray = array.join('');
+
+            var myNameIAppend = document.createElement('p');
+
+            myNameIs.textContent = `My name is... ${joinArray}`;
+
+            document.body.appendChild(myNameIAppend);
+
+        } else {
+            console.log('Grrrrr!!!');
+        };
+
+    </script>
+
+</body>
+
+</html>
