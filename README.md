@@ -16,3 +16,4 @@
 | 08  |  carousel | [Link](carousel/index.html) 
 | 06  |  at | [Link](at/index.js) 
 | 07  |  api | [Link](api/index.html) 
+| 08  |  create element using paragraph & return to DOM with appendChild| [Link](createElement/appendChild.html) 
