@@ -1,40 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Deputados</title>
+
+    <style>
+        * {
+            padding: 1rem;
+            font-family: monospace;
+            border-radius: 1rem;
+            margin: 1rem 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .deputado-name {
+            list-style: decimal;
+            font-size: 2rem;
+            text-align: left;
+        }
+
+        .imageRosto {
+            background-repeat: no-repeat;
+            border: 1px solid rgb(26, 24, 24);
+        }
+    </style>
+
 </head>
 
 <body>
 
 
+    <div class="container" id="container">
+        <ul class="lista">
+            <li>
+                Carregando...
+            </li>
+        </ul>
+    </div>
+
+
     <script>
 
-        // let URL = 'https://dadosabertos.camara.leg.br/api/v2/deputados';
-        // let page = 1;
-        // let qtd = 2;
-        // let URL_DEPUTADOS_BRASIL = `${URL}?pagina=${page}&itens=${qtd}`;
+        let URL = 'https://dadosabertos.camara.leg.br/api/v2/deputados';
+        let page = 1;
+        let qtd = 345;
+        let URL_DEPUTADOS_BRASIL = `${URL}?pagina=${page}&itens=${qtd}`;
 
-        //  fetch(URL_DEPUTADOS_BRASIL)
-        //     .then(response => response.json())
-        //     .then(data => console.log(
-        //         data.dados.map(name => {
-        //             console.log(`${name.nome}`)
-        //         })
-        //     ));
+        fetch(URL_DEPUTADOS_BRASIL)
+            .then(response => response.json())
+            .then(data => console.log(
+                data.dados.map(name => {
+                    console.log(`${name.nome}`)
+                })
+            ));
 
-        // async function geData() {
-        //     let response = await fetch(URL_DEPUTADOS_BRASIL)
-        //     let json = await response.json()
-        //     json.dados.map(name => {
-        //         console.log(name.nome)
-        //     })
-        // };
+        async function geData() {
 
-        // geData();
+            let response = await fetch(URL_DEPUTADOS_BRASIL);
+            let json = await response.json();
+
+            console.log(json);
+
+            let container = document.getElementById('container');
+            container.innerHTML = '';
+
+            json.dados.map(name => {
+
+                let card = document.createElement('div');
+
+                let deputado = document.createElement('li');
+                deputado.classList.add("deputado-name");
+                deputado.textContent = ` ${name.nome} `;
+
+                let imageRosto = document.createElement('img');
+                deputado.classList.add("imageRosto");
+                imageRosto.src = name.urlFoto;
+
+                let partido = document.createElement('li');
+                partido.classList.add("partido-name");
+                partido.textContent = ` ${name.siglaPartido} `;
+
+
+                deputado.appendChild(imageRosto);
+                deputado.appendChild(partido);
+                container.appendChild(deputado);
+
+            })
+        };
+
+        geData();
 
     </script>
 
