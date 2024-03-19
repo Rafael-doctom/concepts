@@ -12,36 +12,56 @@
 
     <script>
 
-        // let names = ['Rafael', 'Vitor', 'John', 'Kylle'];
+        let names = ['Rafael', 'Vitor', 'John', 'Kylle'];
 
-        // function getNames() {
-        //     for (name of names) {
-        //         let init = 0;
-        //         let getPosition = names.splice('');
+        function getNames() {
+            for (name of names) {
+                let init = 0;
+                let getPosition = names.splice('');
 
-        //         for (init; init <= getPosition.length; init++) {
-        //             getPosition.map(myName => console.log(`My name is ${myName} and i'm position at ${init} `))
-        //         };
-        //     };
-        // };
+                for (init; init <= getPosition.length; init++) {
+                    getPosition.map(myName => console.log(`My name is ${myName} and i'm position at ${init} `))
+                };
+            };
+        };
 
 
-        // let numberToSum = [10, 20, 30];
+        let numberToSum = [10, 20, 30];
 
-        // const Sum = () => {
-        //     numberToSum.forEach((currrent, index, array) => {
+        const Sum = () => {
+            numberToSum.forEach((currrent, index, array) => {
 
-        //         let currentValue = `the value ${currrent}`;
-        //         let currentPosition = `in position ${index + 1},`;
-        //         let sumCurrentValues = `adding to the ${currrent} is equal ${currrent + currrent}`;
+                let currentValue = `the value ${currrent}`;
+                let currentPosition = `in position ${index + 1},`;
+                let sumCurrentValues = `adding to the ${currrent} is equal ${currrent + currrent}`;
 
-        //         console.log(`${currentValue} ${currentPosition} ${sumCurrentValues}  `);
+                console.log(`${currentValue} ${currentPosition} ${sumCurrentValues}  `);
 
-        //     });
-        // };
+            });
+        };
 
-        // Sum();
-        // getNames();
+        const TestTwo = () => {
+            const NUMBERS = [1, 2, 3]
+
+            // aqui ele vai LISTAR todos os itens dentro do array, sem se importar com a organização, nem nada do tipo
+            console.log(NUMBERS)
+            // output: (3) [1, 2, 3]
+
+            // na função abaixo, ele deverá percorrer cada ÍTEM dentro do array e listar individualmente.
+            NUMBERS.forEach(element => {
+                console.log(element)
+            })
+            // output: 
+            // 1
+            // 2
+            // 3
+        }
+
+        Sum();
+        getNames();
+        TestTwo();
+
+
 
     </script>
 
